@@ -2,6 +2,7 @@ from pywinauto import application, timings
 # from pywinauto import timings
 import time
 import os
+from HTS_keys import *
 
 app = application.Application()
 app.start("C:/KiwoomHero4/Bin/NKStarter.exe")
@@ -11,11 +12,11 @@ dlg = timings.WaitUntilPasses(20, 0.5, lambda: app.window_(title=title))
 
 pass_ctrl = dlg.Edit2
 pass_ctrl.SetFocus()
-pass_ctrl.TypeKeys('xxxx')
+pass_ctrl.TypeKeys(HTS_ID)
 
 cert_ctrl = dlg.Edit3
 cert_ctrl.SetFocus()
-cert_ctrl.TypeKeys('yyyy')
+cert_ctrl.TypeKeys(HTS_PASS)
 
 btn_ctrl = dlg.Button0
 btn_ctrl.Click()
